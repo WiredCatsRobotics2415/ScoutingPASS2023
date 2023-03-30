@@ -11,13 +11,6 @@ var config_data = `
       "maxSize": 5,
       "required": "true"
     },
-    { "name": "Event",
-      "code": "e",
-      "type": "event",
-      "defaultValue": "2022carv",
-      "required": "true",
-      "disabled": "true"
-    },
     { "name": "Match Level",
       "code": "l",
       "type": "level",
@@ -36,19 +29,6 @@ var config_data = `
       "max": 100,
       "required": "true"
     },
-    { "name": "Robot",
-      "code": "r",
-      "type": "robot",
-      "choices": {
-        "r1": "Red-1",
-        "b1": "Blue-1<br>",
-        "r2": "Red-2",
-        "b2": "Blue-2<br>",
-        "r3": "Red-3",
-        "b3": "Blue-3"
-      },
-      "required":"true"
-    },
     { "name": "Team #",
       "code": "t",
       "type": "team",
@@ -63,18 +43,34 @@ var config_data = `
       "shape": "circle 5 black red true"
     }
   ],
+
   "auton": [
-    { "name": "Auto Scoring",
-      "code": "asg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
+    
+    { "name": "Cones on top row:",
+      "code": "coneTA",
+      "type": "counter"
     },
+    { "name": "Cubes on top row:",
+      "code": "cubeTA",
+      "type": "counter"
+    },
+    { "name": "Cones on middle row:",
+      "code": "coneMA",
+      "type": "counter"
+    },
+    { "name": "Cubes on middle row:",
+      "code": "cubeMA",
+      "type": "counter"
+    },
+    { "name": "Cones on bottom row:",
+      "code": "coneBA",
+      "type": "counter"
+    },
+    { "name": "Cubes on bottom row:",
+      "code": "cubeBA",
+      "type": "counter"
+    },
+    
     { "name": "Crossed Cable",
       "code": "acc",
       "type": "bool"
@@ -99,32 +95,35 @@ var config_data = `
       "defaultValue": "x"
     }
   ],
+
   "teleop": [
-    { "name": "Cycle Timer",
-      "code": "tct",
-      "type": "cycle"
+    
+    { "name": "Cones on top row:",
+      "code": "coneTT",
+      "type": "counter"
     },
-    { "name": "Grid Scoring",
-      "code": "tsg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true",
-      "cycleTimer": "tct"
+    { "name": "Cubes on top row:",
+      "code": "cubeTT",
+      "type": "counter"
     },
-    { "name": "Feeder Count<br>(Fed another bot)",
-      "code": "tfc",
-      "type": "counter",
-      "cycleTimer": "tct"
+    { "name": "Cones on middle row:",
+      "code": "coneMT",
+      "type": "counter"
     },
-    { "name": "Was Fed<br>Game Pieces",
-      "code": "wf",
-      "type": "bool"
+    { "name": "Cubes on middle row:",
+      "code": "cubeMT",
+      "type": "counter"
     },
+    { "name": "Cones on bottom row:",
+      "code": "coneBT",
+      "type": "counter"
+    },
+    { "name": "Cubes on bottom row:",
+      "code": "cubeBT",
+      "type": "counter"
+    },
+    
+    
     { "name": "Was Defended",
       "code": "wd",
       "type": "bool"
@@ -150,10 +149,12 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Docking Timer",
-      "code": "dt",
-      "type": "timer"
+
+    { "name": "Time of docking:",
+      "code": "dockTime",
+      "type": "text"
     },
+
     { "name": "Final Status",
       "code": "fs",
       "type":"radio",
@@ -223,7 +224,7 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Dropped Cones (>2)",
+    { "name": "Dropped Game Pieces (>2)",
       "code": "dc",
       "type": "bool"
     },

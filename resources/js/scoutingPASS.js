@@ -23,7 +23,7 @@ var options = {
 
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
 //var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
-var requiredFields = ["e", "m", "l", "r", "s", "as"];
+var requiredFields = ["m", "l", "s"];
 
 function addTimer(table, idx, name, data) {
   var row = table.insertRow(idx);
@@ -932,9 +932,8 @@ function updateQRHeader() {
 
   if (!pitScouting) {
     str = str
-      .replace('!EVENT!', document.getElementById("input_e").value)
       .replace('!MATCH!', document.getElementById("input_m").value)
-      .replace('!ROBOT!', document.getElementById("display_r").value)
+/*      .replace('!ROBOT!', document.getElementById("display_r").value)  */
       .replace('!TEAM!', document.getElementById("input_t").value);
   } else {
     str = 'Pit Scouting - Team !TEAM!'
@@ -1267,7 +1266,7 @@ function getCurrentTeamNumberFromRobot() {
 }
 
 function getCurrentMatchKey() {
-  return document.getElementById("input_e").value + "_" + getLevel() + document.getElementById("input_m").value;
+  return "_" + getLevel() + document.getElementById("input_m").value;
 }
 
 function getCurrentMatch() {

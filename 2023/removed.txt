@@ -1,0 +1,37 @@
+{ "name": "Auto Scoring",
+      "code": "asg",
+      "type": "clickable_image",
+      "filename": "2023/grid_image.png",
+      "dimensions": "9 4",
+      "clickRestriction": "onePerBox",
+      "toggleClick": "true",
+      "showFlip": "false",
+      "showUndo": "false",
+      "shape": "circle 12 black red true"
+    },
+
+    { "name": "Cycle Timer",
+      "code": "tct",
+      "type": "cycle"
+    },
+    { "name": "Grid Scoring",
+      "code": "tsg",
+      "type": "clickable_image",
+      "filename": "2023/grid_image.png",
+      "dimensions": "9 4",
+      "clickRestriction": "onePerBox",
+      "toggleClick": "true",
+      "showFlip": "false",
+      "showUndo": "false",
+      "shape": "circle 12 black red true",
+      "cycleTimer": "tct"
+    },
+    { "name": "Feeder Count<br>(Fed another bot)",
+      "code": "tfc",
+      "type": "counter",
+      "cycleTimer": "tct"
+    },
+    { "name": "Was Fed<br>Game Pieces",
+      "code": "wf",
+      "type": "bool"
+    },
