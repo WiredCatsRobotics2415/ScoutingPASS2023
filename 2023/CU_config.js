@@ -1,6 +1,5 @@
 var config_data = `
 {
-  "enable_google_sheets": "true",
   "title": "Scouting PASS 2023",
   "page_title": "Charged Up",
   "checkboxAs": "10",
