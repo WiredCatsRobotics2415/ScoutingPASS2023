@@ -177,7 +177,7 @@ var config_data = `
   "endgame": [
 
     { "name": "Time of docking:",
-    "gsCol": "fpu",
+    "gsCol": "dockTime",
       "code": "dockTime",
       "type": "text"
     },
