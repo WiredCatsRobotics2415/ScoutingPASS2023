@@ -11,6 +11,13 @@ var config_data = `
       "maxSize": 5,
       "required": "true"
     },
+    { "name": "Event",
+      "code": "e",
+      "type": "event",
+      "defaultValue": "2023macon",
+      "required": "true",
+      "disabled": "true"
+    },
     { "name": "Match Level",
       "code": "l",
       "type": "level",
@@ -45,6 +52,17 @@ var config_data = `
   ],
 
   "auton": [
+  { "name": "Auto Scoring",
+      "code": "asg",
+      "type": "clickable_image",
+      "filename": "2023/grid_image.png",
+      "dimensions": "9 4",
+      "clickRestriction": "onePerBox",
+      "toggleClick": "true",
+      "showFlip": "false",
+      "showUndo": "false",
+      "shape": "circle 12 black red true"
+    }
     
     { "name": "Cones on top row:",
       "code": "coneTA",
