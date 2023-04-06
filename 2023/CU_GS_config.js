@@ -26,6 +26,7 @@ var config_data = `
       "gsCol": "level",
       "type": "level",
       "choices": {
+        "prac": "Practice<br>",
         "qm": "Quals<br>",
         "de": "Double Elimination<br>",
         "f": "Finals"
