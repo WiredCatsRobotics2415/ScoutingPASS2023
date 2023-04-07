@@ -1,0 +1,22 @@
+<html>
+<head></head>
+<body><img src="https://wiredcatsrobotics2415.github.io/ScoutingPASS2023/2023/field_image.png" style="width: 100%;"
+        id="field-img"><svg height="50" width="50" style="position: absolute; top: 259px; left: 285px;" id="dot">
+        <circle cx="25" cy="25" r="20" stroke="black" stroke-width="3" fill="red"></circle>
+    </svg><input id="inp" type="number">
+    <script>
+        function map(x, in_min, in_max, out_min, out_max) {
+            return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+        }
+        var img = document.getElementById("field-img")
+        var dot = document.getElementById("dot")
+        var inp = document.getElementById("inp")
+        inp.onchange = function(event) {
+            dot.style.top = Math.round(map(Math.floor(inp.value/12), 0, 6, 0, img.height))
+            dot.style.left = Math.round(map(inp.value%12, 0, 12, 0, img.width))
+            //dot.style.top = Math.round((((inp.value%6)/6))*img.height)-20 + "px"
+            //dot.style.left = Math.round((((inp.value%12)/12))*img.width)-20 + "px"
+        }
+    </script>
+</body>
+</html>
