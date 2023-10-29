@@ -14,7 +14,7 @@ function setUpGoogleSheets() {
           console.log(`${key}: ${value}\n`);
         }
 
-        fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
+        fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd, redirect: 'follow' })
           .then(response => { 
               alert('Success!', response) })
           .catch(error => {
